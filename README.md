@@ -378,3 +378,48 @@ const p = new Person()
 console.log(p instanceof Person) // true
 console.log(p instanceof Object) // true
 ```
+
+## 21. this
+
+**this — hozirgi kontekstdagi obyektga ishora qiladi. Class ichida obyektga murojaat qilish uchun ishlatiladi.**
+
+```js
+class Person {
+  constructor(name) {
+    this.name = name
+  }
+  sayName() {
+    console.log(this.name)
+  }
+}
+
+const p = new Person("Ali")
+p.sayName() // Ali
+```
+
+## 22. OOP tamoyillari
+
+**Encapsulation — obyekt ichidagi data va metodlarni bir joyda saqlash
+
+Inheritance — classlar orasida meros olish
+
+Polymorphism — bir xil interfeys orqali turli implementatsiyalar
+
+Abstraction — murakkab tizimni soddalashtirish
+**
+
+```js
+class Animal {
+  speak() { console.log("Animal speaks") }
+}
+
+class Dog extends Animal {
+  speak() { console.log("Dog barks") }
+}
+
+const a = new Animal()
+const d = new Dog()
+
+a.speak() // Animal speaks
+d.speak() // Dog barks
+```
