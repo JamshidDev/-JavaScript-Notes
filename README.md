@@ -42,7 +42,7 @@ const user = new Person("Ali", 25)
 console.log(user.name) // Ali
 ```
 
-##2. Class Expression
+## 2. Class Expression
 
 **Description:
 Class expression — sinfni qiymat sifatida o‘zgaruvchiga berish yoki boshqa joyga uzatish.
