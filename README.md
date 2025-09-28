@@ -399,10 +399,14 @@ p.sayName() // Ali
 
 ## 22. OOP tamoyillari
 
-- **Encapsulation** — obyekt ichidagi data va metodlarni bir joyda saqlash
-- **Inheritance** — classlar orasida meros olish
-- **Polymorphism** — bir xil interfeys orqali turli implementatsiyalar
-- **Abstraction** — murakkab tizimni soddalashtirish
+- **Encapsulation** — Obyekt ichidagi ma’lumotlar (data) va funksiyalar (metodlar) bir joyda saqlanadi. Shu orqali tashqi kod obyektning ichki ishini bevosita o‘zgartira olmaydi va faqat ruxsat etilgan metodlar orqali unga murojaat qilinadi. Bu ma’lumotlarni himoya qilish va kodni yanada barqaror qilishga yordam beradi.
+
+- **Inheritance** — Bir class (child class) boshqa class (parent class) metodlari va propertylarini meros qilib oladi. Bu orqali kodni takrorlamasdan qayta ishlatish, classlar orasida bog‘lanish yaratish va tizimni modularga ajratish mumkin.
+
+- **Polymorphism** — Bir xil nomdagi metod yoki interfeys turli classlarda turlicha ishlash qobiliyati. Masalan, `speak()` metodi Animal classida umumiy bo‘lishi mumkin, lekin Dog va Cat classlarida har biri o‘ziga xos ovoz chiqaradi. Shu bilan birga bir xil kod bir nechta obyekt bilan ishlay oladi.
+
+- **Abstraction** — Murakkab tizimlarni soddalashtirish va faqat kerakli qismini ko‘rsatish prinsipi. Bu orqali foydalanuvchi yoki boshqa kod obyektning ichki tafsilotlari bilan shug‘ullanishi shart emas, faqat belgilangan metodlar va interfeys orqali ishlaydi. Masalan, avtomobilni haydashda dvigatel ichki ishlashini bilish shart emas, faqat `start()` va `stop()` tugmalari bilan boshqariladi.
+
 
 
 ```js
