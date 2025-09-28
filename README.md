@@ -46,3 +46,35 @@ class Person {
 
 const user = new Person("Ali", 25)
 console.log(user.name) // Ali
+
+##2. Class Expression
+
+Description:
+Class expression — sinfni qiymat sifatida o‘zgaruvchiga berish yoki boshqa joyga uzatish.
+
+```js
+const Car = class {
+  constructor(model) {
+    this.model = model
+  }
+}
+
+const myCar = new Car("Tesla")
+console.log(myCar.model) // Tesla
+
+##3. Constructor
+
+Description:
+constructor — classdan obyekt yaratilganda avtomatik ishga tushadigan maxsus metod.
+
+```js
+class Book {
+  constructor(title, author) {
+    this.title = title
+    this.author = author
+  }
+}
+
+const b = new Book("JS Basics", "Jamacoder")
+console.log(b.title)  // JS Basics
+
