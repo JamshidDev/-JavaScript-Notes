@@ -209,3 +209,172 @@ const d = new Dog("Buddy", "Labrador")
 console.log(d.name)  // Buddy
 console.log(d.breed) // Labrador
 ```
+
+## 11. Prototype Inheritance
+
+**JavaScriptda classlar prototip orqali meros oladi. Har bir obyekt [[Prototype]] orqali parentning property va metodlariga kiradi.**
+
+```js
+function Animal(name) {
+  this.name = name
+}
+Animal.prototype.speak = function() {
+  console.log(`${this.name} makes a sound`)
+}
+
+const dog = new Animal("Rex")
+dog.speak() // Rex makes a sound
+
+12. Private Fields
+
+# bilan e’lon qilingan maydonlar private hisoblanadi va class tashqarisidan ularga kira olmaysiz. Bu encapsulation uchun qulay.
+
+class Person {
+  #ssn
+  constructor(name, ssn) {
+    this.name = name
+    this.#ssn = ssn
+  }
+
+  getSSN() {
+    return this.#ssn
+  }
+}
+
+const p = new Person("Ali", "123-45-6789")
+console.log(p.getSSN()) // 123-45-6789
+```
+
+## 13. Private Methods
+
+**Private metodlar ham # bilan e’lon qilinadi va faqat class ichida ishlaydi. Class tashqarisidan chaqirib bo‘lmaydi.**
+
+```js
+class Counter {
+  #count = 0
+  #increment() {
+    this.#count++
+  }
+
+  increase() {
+    this.#increment()
+    return this.#count
+  }
+}
+
+const c = new Counter()
+console.log(c.increase()) // 1
+```
+
+## 14. Protected Fields
+
+**JavaScriptda haqiqiy protected yo‘q, lekin _ bilan belgilangan propertylar child classlar tomonidan ishlatilishi mumkin.**
+
+```js
+class Person {
+  _name
+  constructor(name) {
+    this._name = name
+  }
+}
+
+class Employee extends Person {
+  getName() {
+    return this._name
+  }
+}
+
+const e = new Employee("Ali")
+console.log(e.getName()) // Ali
+```
+
+## 15. Computed Method Names
+
+**Metod nomlarini dynamic ravishda [expression] bilan hisoblash mumkin. Bu flexibility beradi.**
+
+```js
+const methodName = "sayHello"
+
+class Greeter {
+  [methodName]() {
+    console.log("Hello!")
+  }
+}
+
+const g = new Greeter()
+g.sayHello() // Hello!
+```
+
+## 16. new.target
+
+**new.target yordamida class yoki function qaysi kontekstda chaqirilganini bilish mumkin. Shu orqali abstract class imitatsiya qilish mumkin.**
+
+```js
+class Person {
+  constructor() {
+    if (!new.target) {
+      throw new Error("Must use new")
+    }
+    console.log("Created!")
+  }
+}
+
+const p = new Person() // Created!
+```
+
+## 17. Class Hoisting bo‘lmaydi
+
+**Class declaration hoisting qilinmaydi. Shu sababdan classdan oldin unga murojaat qilish mumkin emas.**
+
+```js
+// console.log(Person) // Error
+class Person {}
+
+18. Abstract Class (imitatsiya)
+
+JSda abstract class yo‘q, lekin new.target bilan uni imitasiya qilish mumkin.
+
+class AbstractAnimal {
+  constructor() {
+    if (new.target === AbstractAnimal) {
+      throw new Error("Cannot instantiate AbstractAnimal directly")
+    }
+  }
+}
+
+class Dog extends AbstractAnimal {}
+const d = new Dog() // OK
+```
+
+## 19. Mixins
+
+**Mixin — bir nechta classlar yoki funksional metodlarni birlashtirish usuli.**
+
+```js
+let sayHiMixin = {
+  sayHi() {
+    console.log(`Hi ${this.name}`)
+  }
+}
+
+class User {
+  constructor(name) {
+    this.name = name
+  }
+}
+
+Object.assign(User.prototype, sayHiMixin)
+
+new User("Ali").sayHi() // Hi Ali
+```
+
+## 20. instanceof
+
+**instanceof operatori obyekt qaysi classdan yaratilganini tekshiradi.**
+
+```js
+class Person {}
+const p = new Person()
+console.log(p instanceof Person) // true
+console.log(p instanceof Object) // true
+```
