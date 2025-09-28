@@ -1,3 +1,4 @@
+
 ## 📑 Mundarija
 
 1. [Class Declaration](#1-class-declaration)  
@@ -21,13 +22,13 @@
 19. [Mixins](#19-mixins)  
 20. [instanceof](#20-instanceof)  
 21. [this](#21-this)  
-22. [OOP tamoyillari (Encapsulation, Inheritance, Polymorphism, Abstraction)](#22-oop-tamoyillari)
+22. [OOP tamoyillari](#22-oop-tamoyillari)
 
 ---
 
 ## 1. Class Declaration
 
-**Class deklaratsiyasi yangi sinfni yaratishning asosiy usuli.**  
+**Class deklaratsiyasi — JavaScriptda yangi sinf yaratishning standart usuli. `class` kalit so‘zi bilan e’lon qilinadi va odatda nomlanadi. Shu sinfdan obyektlar yaratish mumkin.**
 
 ```js
 class Person {
@@ -43,9 +44,10 @@ console.log(user.name) // Ali
 
 ## 2. Class Expression
 
-**Class expression — sinfni qiymat sifatida o‘zgaruvchiga berish yoki boshqa joyga uzatish.**
+**Class expression — sinfni qiymat sifatida o‘zgaruvchiga berish yoki boshqa joyga uzatish uchun ishlatiladi. U anonim yoki nomlangan bo‘lishi mumkin.**
 
 ```js
+// Anonim class
 const Car = class {
   constructor(model) {
     this.model = model
@@ -55,3 +57,5 @@ const Car = class {
 const myCar = new Car("Tesla")
 console.log(myCar.model) // Tesla
 ```
+
+
