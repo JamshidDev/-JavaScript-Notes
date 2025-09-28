@@ -27,8 +27,7 @@
 
 ## 1. Class Declaration
 
-**Description:**  
-Class deklaratsiyasi yangi sinfni yaratishning asosiy usuli.  
+**Class deklaratsiyasi yangi sinfni yaratishning asosiy usuli.**  
 
 ```js
 class Person {
@@ -44,8 +43,7 @@ console.log(user.name) // Ali
 
 ## 2. Class Expression
 
-**Description:
-Class expression — sinfni qiymat sifatida o‘zgaruvchiga berish yoki boshqa joyga uzatish.
+**Class expression — sinfni qiymat sifatida o‘zgaruvchiga berish yoki boshqa joyga uzatish.**
 
 ```js
 const Car = class {
