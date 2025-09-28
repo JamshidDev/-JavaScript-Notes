@@ -58,4 +58,69 @@ const myCar = new Car("Tesla")
 console.log(myCar.model) // Tesla
 ```
 
+## 3. Constructor
+
+**constructor — classdan obyekt yaratilganda avtomatik ishga tushadigan maxsus metod. Unda obyektning boshlang‘ich qiymatlari belgilanadi.**
+
+```js
+class Book {
+  constructor(title, author) {
+    this.title = title
+    this.author = author
+  }
+}
+
+const b = new Book("JS Basics", "Jamacoder")
+console.log(b.title)  // JS Basics
+```
+
+## 4. Instance Properties
+
+**Instance properties — bu obyektga tegishli maydonlar. Har bir obyekt o‘ziga xos qiymatga ega bo‘ladi.**
+
+```js
+class User {
+  constructor(name, age) {
+    this.name = name
+    this.age = age
+  }
+}
+
+const u1 = new User("Hasan", 20)
+const u2 = new User("Husan", 22)
+
+console.log(u1.name) // Hasan
+console.log(u2.name) // Husan
+```
+
+## 5. Instance Methods
+
+**Instance metodlari — class ichida yozilgan funksiyalar bo‘lib, faqat obyekt orqali chaqiriladi. Ular obyektning ma’lumotlariga ishlov beradi.**
+
+```js
+class Calculator {
+  add(a, b) {
+    return a + b // Qo'shish
+  }
+  multiply(a, b) {
+    return a * b // Ko'paytirish
+  }
+}
+
+const calc = new Calculator()
+console.log(calc.add(2, 3))      // 5
+console.log(calc.multiply(4, 5)) // 20
+```
+
+## 6. Static Properties
+
+**Static property — bu sinfga tegishli maydon, lekin obyektlarga tegishli emas. static kalit so‘zi bilan e’lon qilinadi.**
+
+```js
+class Helper {
+  static version = "1.0.0"
+}
+
+console.log(Helper.version) // 1.0.0
+```
 
