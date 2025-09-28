@@ -1,12 +1,42 @@
-# Class Declaration
+# 📘 JavaScript Notes
 
-**Description:**
-Class deklaratsiyasi — yangi sinf (class) yaratishning oddiy yo‘li. Bu `class` kalit so‘zi bilan yoziladi va nomlanadi. Sinf odatda obyekt yaratish uchun qolip (shablon) hisoblanadi.
+Ushbu repoda JavaScript bo‘yicha o‘rganilgan barcha tushunchalar, misollar va kod izohlar bilan to‘plangan. Har bir mavzu alohida bo‘lim ko‘rinishida yoziladi: Classlar, OOP tamoyillari, Module turlari, Functionlar, Array methodlari va hokazo.
 
-**Example code:**
+---
+
+## 📑 Mundarija
+
+1. [Class Declaration](#1-class-declaration)  
+2. [Class Expression](#2-class-expression)  
+3. [Constructor](#3-constructor)  
+4. [Instance Properties](#4-instance-properties)  
+5. [Instance Methods](#5-instance-methods)  
+6. [Static Properties](#6-static-properties)  
+7. [Static Methods](#7-static-methods)  
+8. [Getters va Setters](#8-getters-va-setters)  
+9. [Inheritance (extends)](#9-inheritance-extends)  
+10. [super()](#10-super)  
+11. [Prototype Inheritance](#11-prototype-inheritance)  
+12. [Private Fields](#12-private-fields)  
+13. [Private Methods](#13-private-methods)  
+14. [Protected Fields](#14-protected-fields)  
+15. [Computed Method Names](#15-computed-method-names)  
+16. [new.target](#16-newtarget)  
+17. [Class Hoisting bo‘lmaydi](#17-class-hoisting-bolmaydi)  
+18. [Abstract Class (imitatsiya)](#18-abstract-class-imitatsiya)  
+19. [Mixins](#19-mixins)  
+20. [instanceof](#20-instanceof)  
+21. [this](#21-this)  
+22. [OOP tamoyillari (Encapsulation, Inheritance, Polymorphism, Abstraction)](#22-oop-tamoyillari)
+
+---
+
+## 1. Class Declaration
+
+**Description:**  
+Class deklaratsiyasi yangi sinfni yaratishning asosiy usuli.  
 
 ```js
-// Oddiy class e'lon qilish
 class Person {
   constructor(name, age) {
     this.name = name
@@ -14,22 +44,14 @@ class Person {
   }
 }
 
-// Classdan obyekt yaratish
 const user = new Person("Ali", 25)
 console.log(user.name) // Ali
-```
 
----
+2. Class Expression
 
-# Class Expression
+Description:
+Class expression — sinfni qiymat sifatida o‘zgaruvchiga berish yoki boshqa joyga uzatish.
 
-**Description:**
-Class expression — sinfni o‘zgaruvchiga yoki boshqa joyga qiymat sifatida berish. Bunda classga nom berish shart emas (anonim bo‘lishi ham mumkin).
-
-**Example code:**
-
-```js
-// Anonim class expression
 const Car = class {
   constructor(model) {
     this.model = model
@@ -38,82 +60,3 @@ const Car = class {
 
 const myCar = new Car("Tesla")
 console.log(myCar.model) // Tesla
-
-// Nomlangan class expression
-const Animal = class AnimalClass {
-  constructor(type) {
-    this.type = type
-  }
-}
-console.log(new Animal("Dog").type) // Dog
-```
-
----
-
-# Constructor
-
-**Description:**
-`constructor` — bu maxsus metod bo‘lib, classdan obyekt yaratilganda avtomatik ishlaydi. Unda odatda boshlang‘ich qiymatlar (`properties`) beriladi.
-
-**Example code:**
-
-```js
-class Book {
-  constructor(title, author) {
-    // constructor chaqirilganda shu ishlaydi
-    this.title = title
-    this.author = author
-  }
-}
-
-const b = new Book("JavaScript Basics", "Jamacoder")
-console.log(b.title)  // JavaScript Basics
-```
-
----
-
-# Instance Properties
-
-**Description:**
-Instance properties — classdan yaratilgan har bir obyektga xos bo‘lgan maydonlar (property). Ular `this` orqali belgilanadi.
-
-**Example code:**
-
-```js
-class User {
-  constructor(name, age) {
-    this.name = name  // instance property
-    this.age = age    // instance property
-  }
-}
-
-const u1 = new User("Hasan", 20)
-const u2 = new User("Husan", 22)
-
-console.log(u1.name) // Hasan
-console.log(u2.name) // Husan
-```
-
----
-
-# Instance Methods
-
-**Description:**
-Instance metodlari — bu class ichida yozilgan funksiyalar bo‘lib, obyektlar orqali chaqiriladi.
-
-**Example code:**
-
-```js
-class Calculator {
-  add(a, b) {
-    return a + b
-  }
-  multiply(a, b) {
-    return a * b
-  }
-}
-
-const calc = new Calculator()
-console.log(calc.add(2, 3))      // 5
-console.log(calc.multiply(4, 5)) // 20
-```
