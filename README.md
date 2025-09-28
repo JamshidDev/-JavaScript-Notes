@@ -399,14 +399,11 @@ p.sayName() // Ali
 
 ## 22. OOP tamoyillari
 
-**Encapsulation — obyekt ichidagi data va metodlarni bir joyda saqlash
+- **Encapsulation** — obyekt ichidagi data va metodlarni bir joyda saqlash
+- **Inheritance** — classlar orasida meros olish
+- **Polymorphism** — bir xil interfeys orqali turli implementatsiyalar
+- **Abstraction** — murakkab tizimni soddalashtirish
 
-Inheritance — classlar orasida meros olish
-
-Polymorphism — bir xil interfeys orqali turli implementatsiyalar
-
-Abstraction — murakkab tizimni soddalashtirish
-**
 
 ```js
 class Animal {
