@@ -124,3 +124,88 @@ class Helper {
 console.log(Helper.version) // 1.0.0
 ```
 
+## 7. Static Methods
+
+**Static metodlar class darajasida ishlaydi va obyektlar orqali chaqirilmaydi. Ular utility funksiyalar uchun qulay.**
+
+```js
+class MathUtils {
+  static square(x) {
+    return x * x
+  }
+}
+
+console.log(MathUtils.square(5)) // 25
+```
+
+## 8. Getters va Setters
+
+**Getter va Setter obyektning propertylarini olish va o‘rnatish uchun ishlatiladi. Ular propertyni private yoki encapsulated qilishda foydali.**
+
+```js
+class Person {
+  constructor(name) {
+    this._name = name
+  }
+
+  get name() {
+    return this._name
+  }
+
+  set name(newName) {
+    this._name = newName
+  }
+}
+
+const p = new Person("Ali")
+console.log(p.name) // Ali
+p.name = "Hasan"
+console.log(p.name) // Hasan
+```
+
+## 9. Inheritance (extends)
+
+**Inheritance — bu bir classning boshqa classdan meros olish imkoniyati. Child class parent class metodlari va propertylarini ishlata oladi.**
+
+```js
+class Animal {
+  constructor(name) {
+    this.name = name
+  }
+  speak() {
+    console.log(`${this.name} makes a sound`)
+  }
+}
+
+class Dog extends Animal {
+  speak() {
+    console.log(`${this.name} barks`)
+  }
+}
+
+const d = new Dog("Buddy")
+d.speak() // Buddy barks
+```
+
+## 10. super()
+
+**super() — child class constructorida parent class constructorini chaqirish uchun ishlatiladi. Shu orqali parent propertylarini o‘rnatish mumkin.**
+
+```js
+class Animal {
+  constructor(name) {
+    this.name = name
+  }
+}
+
+class Dog extends Animal {
+  constructor(name, breed) {
+    super(name)
+    this.breed = breed
+  }
+}
+
+const d = new Dog("Buddy", "Labrador")
+console.log(d.name)  // Buddy
+console.log(d.breed) // Labrador
+```
