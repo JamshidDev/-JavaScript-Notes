@@ -1,6 +1,8 @@
-#JavaScript Modules - Complete Guide
+# JavaScript Modules - Complete Guide
 ## 1. Named Export
 **Moduldan bir nechta qiymat, funksiya yoki klasslarni eksport qilish uchun ishlatiladi. Har bir eksport qilingan element o'z nomi bilan identifikatsiya qilinadi va import qilishda aynan shu nomdan foydalaniladi.**
+
+```js
 javascript// math.js
 
 // Har bir element oldiga export yozish
@@ -19,6 +21,7 @@ const subtract = (a, b) => a - b;
 const divide = (a, b) => a / b;
 
 export { subtract, divide };
+```
 
 2. Named Export with Rename
 Eksport qilayotganda element nomini o'zgartirish imkonini beradi. Bu nom to'qnashuvi yoki moduldan foydalanuvchilar uchun aniqroq nomlar berish uchun foydali.
