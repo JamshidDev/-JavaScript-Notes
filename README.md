@@ -23,8 +23,11 @@ const divide = (a, b) => a / b;
 export { subtract, divide };
 ```
 
-2. Named Export with Rename
-Eksport qilayotganda element nomini o'zgartirish imkonini beradi. Bu nom to'qnashuvi yoki moduldan foydalanuvchilar uchun aniqroq nomlar berish uchun foydali.
+## 2. Named Export with Rename
+
+**Eksport qilayotganda element nomini o'zgartirish imkonini beradi. Bu nom to'qnashuvi yoki moduldan foydalanuvchilar uchun aniqroq nomlar berish uchun foydali.**
+
+```js
 javascript// shapes.js
 
 function calculateArea(radius) {
@@ -40,9 +43,13 @@ export {
   calculateArea as circleArea,
   calculatePerimeter as circlePerimeter 
 };
+```
 
-3. Default Export
-Har bir modulda faqat bitta default eksport bo'lishi mumkin. Bu modulning asosiy funksiyasi yoki klassi bo'lib, import qilishda istalgan nom berilishi mumkin.
+## 3. Default Export
+
+**Har bir modulda faqat bitta default eksport bo'lishi mumkin. Bu modulning asosiy funksiyasi yoki klassi bo'lib, import qilishda istalgan nom berilishi mumkin.**
+
+```js
 javascript// logger.js
 
 // Funksiyani to'g'ridan-to'g'ri default eksport qilish
@@ -56,9 +63,13 @@ function Logger(prefix) {
 }
 
 export default Logger;
+```
 
-4. Default Export (Class)
-Klasslarni default eksport qilish - obyekt yo'naltirilgan dasturlashda keng tarqalgan usul.
+## 4. Default Export (Class)
+
+**Klasslarni default eksport qilish - obyekt yo'naltirilgan dasturlashda keng tarqalgan usul.**
+
+```js
 javascript// User.js
 
 export default class User {
@@ -77,9 +88,13 @@ export default class User {
     return new User('Guest', 'guest@example.com');
   }
 }
+```
 
-5. Named Import
-Named eksportlarni import qilish uchun jingalak qavslar ishlatiladi va eksport qilingan aniq nomlar ko'rsatiladi.
+## 5. Named Import
+
+**Named eksportlarni import qilish uchun jingalak qavslar ishlatiladi va eksport qilingan aniq nomlar ko'rsatiladi.**
+
+```js
 javascript// app.js
 
 // Bir nechta elementni import qilish
@@ -92,9 +107,13 @@ console.log(multiply(4, 2)); // 8
 // Faqat kerakli elementlarni import qilish
 import { subtract } from './math.js';
 console.log(subtract(10, 3)); // 7
+```
 
-6. Named Import with Rename
-Import qilayotganda element nomini o'zgartirish. Bu nom to'qnashuvi yoki kodda aniqroq nomlar ishlatish uchun foydali.
+## 6. Named Import with Rename
+
+**Import qilayotganda element nomini o'zgartirish. Bu nom to'qnashuvi yoki kodda aniqroq nomlar ishlatish uchun foydali.**
+
+```js
 javascript// app.js
 
 // Import qilishda nomlarni o'zgartirish
@@ -105,9 +124,12 @@ import {
 
 console.log(getCircleArea(5)); // 78.53975
 console.log(getCirclePerimeter(5)); // 31.4159
+```
 
-7. Default Import
-Default eksportni import qilish. Jingalak qavslar ishlatilmaydi va istalgan nom berilishi mumkin.
+## 7. Default Import
+** Default eksportni import qilish. Jingalak qavslar ishlatilmaydi va istalgan nom berilishi mumkin.**
+
+```js
 javascript// app.js
 
 // Default eksportni import qilish
@@ -120,9 +142,14 @@ import User from './User.js';
 
 const user = new User('Ali', 'ali@example.com');
 console.log(user.getInfo()); // Ali (ali@example.com)
+```
 
-8. Mixed Import (Default + Named)
-Bir moduldan ham default, ham named eksportlarni birga import qilish mumkin.
+
+## 8. Mixed Import (Default + Named)
+
+** Bir moduldan ham default, ham named eksportlarni birga import qilish mumkin.**
+
+```js
 javascript// utils.js
 export default function formatDate(date) {
   return date.toISOString();
@@ -140,9 +167,13 @@ import formatDate, { VERSION, capitalize } from './utils.js';
 console.log(formatDate(new Date())); // 2024-01-15T10:30:00.000Z
 console.log(VERSION); // 1.0.0
 console.log(capitalize('hello')); // Hello
+```
 
-9. Namespace Import
-Modulning barcha eksportlarini bitta obyekt ichida import qilish. Bu kodni tashkillashtirish va nom to'qnashuvlarini oldini olish uchun juda foydali.
+## 9. Namespace Import
+
+**Modulning barcha eksportlarini bitta obyekt ichida import qilish. Bu kodni tashkillashtirish va nom to'qnashuvlarini oldini olish uchun juda foydali.**
+
+```js
 javascript// math.js
 export const PI = 3.14159;
 export function add(a, b) { return a + b; }
@@ -157,9 +188,13 @@ console.log(Math.add(5, 3)); // 8
 console.log(Math.multiply(4, 2)); // 8
 
 // Har bir funksiya Math.functionName orqali chaqiriladi
+```
 
-10. Re-export
-Boshqa modullardan import qilgan elementlarni darhol qayta eksport qilish. Bu modullarni birlashtirish va tashkillashtirish uchun ishlatiladi.
+## 10. Re-export
+
+**Boshqa modullardan import qilgan elementlarni darhol qayta eksport qilish. Bu modullarni birlashtirish va tashkillashtirish uchun ishlatiladi.**
+
+```js
 javascript// shapes/circle.js
 export function circleArea(r) { return Math.PI * r * r; }
 
@@ -178,9 +213,13 @@ export { triangleArea } from './triangle.js';
 // app.js
 // Endi barcha shakllarni bir joydan import qilish mumkin
 import { circleArea, squareArea, triangleArea } from './shapes/index.js';
+```
 
-11. Re-export All
-Modulning barcha eksportlarini boshqa modul orqali qayta eksport qilish.
+## 11. Re-export All
+
+**Modulning barcha eksportlarini boshqa modul orqali qayta eksport qilish.**
+
+```js
 javascript// components/Button.js
 export class Button { }
 
@@ -199,9 +238,13 @@ export * from './Form.js';
 // app.js
 // Hamma narsani bir marta import qilish
 import { Button, Input, Form } from './components/index.js';
+```
 
-12. Re-export with Rename
-Qayta eksport qilayotganda elementlarning nomini o'zgartirish.
+## 12. Re-export with Rename
+
+**Qayta eksport qilayotganda elementlarning nomini o'zgartirish.**
+
+```js
 javascript// api/users.js
 export function fetchUsers() { /* ... */ }
 
@@ -215,9 +258,13 @@ export { fetchPosts as getPosts } from './posts.js';
 
 // app.js
 import { getUsers, getPosts } from './api/index.js';
+```
 
-13. Side Effect Import
-Modul kodini bajarish uchun import qilish, lekin hech narsa olmaslik. Bu global sozlamalar, polyfilllar yoki CSS yuklash uchun ishlatiladi.
+## 3. Side Effect Import
+
+**Modul kodini bajarish uchun import qilish, lekin hech narsa olmaslik. Bu global sozlamalar, polyfilllar yoki CSS yuklash uchun ishlatiladi.**
+
+```js
 javascript// polyfills.js
 // Array.prototype.at() metodini qo'shish
 if (!Array.prototype.at) {
@@ -234,9 +281,13 @@ import './polyfills.js';
 // Endi .at() metodi mavjud
 const arr = [1, 2, 3];
 console.log(arr.at(-1)); // 3
+```
 
-14. Dynamic Import (Basic)
-Modulni dastur ishlash vaqtida dinamik ravishda yuklash. Bu kod bo'laklarga ajratish (code splitting) va lazy loading uchun ishlatiladi.
+## 14. Dynamic Import (Basic)
+
+**Modulni dastur ishlash vaqtida dinamik ravishda yuklash. Bu kod bo'laklarga ajratish (code splitting) va lazy loading uchun ishlatiladi.**
+
+```js
 javascript// heavyLibrary.js
 export function processData(data) {
   // Katta hisoblashlar...
@@ -252,9 +303,13 @@ document.getElementById('loadBtn').addEventListener('click', async () => {
   const result = module.processData([1, 2, 3]);
   console.log(result); // [2, 4, 6]
 });
+```
 
-15. Dynamic Import with Condition
-Shartga qarab turli modullarni yuklash. Bu feature flags yoki user preferences uchun foydali.
+## 15. Dynamic Import with Condition
+
+**Shartga qarab turli modullarni yuklash. Bu feature flags yoki user preferences uchun foydali.**
+
+```js
 javascript// themes/dark.js
 export const theme = {
   background: '#000',
@@ -280,9 +335,13 @@ async function loadTheme(isDark) {
 
 // Foydalanish
 loadTheme(true); // Dark tema yuklaydi
+```
 
-16. Dynamic Import with Error Handling
-Dynamic import'da xatolarni to'g'ri boshqarish.
+## 16. Dynamic Import with Error Handling
+
+**Dynamic import'da xatolarni to'g'ri boshqarish.**
+
+```js
 javascript// app.js
 
 async function loadFeature(featureName) {
@@ -302,9 +361,13 @@ async function loadFeature(featureName) {
 }
 
 loadFeature('premium'); // Agar yo'q bo'lsa, default yuklanadi
+```
 
-17. Import Map (Basic)
-HTML'da modul yo'llarini qisqartirish va boshqarish uchun import xarita ishlatish.
+## 17. Import Map (Basic)
+
+**HTML'da modul yo'llarini qisqartirish va boshqarish uchun import xarita ishlatish.**
+
+```js
 html<!DOCTYPE html>
 <html>
 <head>
@@ -357,9 +420,13 @@ html<script type="importmap">
   // Agar /experimental/ da bo'lsa, React 19 yuklanadi
   // Boshqa joylarda React 18 yuklanadi
 </script>
+```
 
-19. Import Map Feature Detection
-Brauzer import map'ni qo'llab-quvvatlaydimi tekshirish.
+## 19. Import Map Feature Detection
+
+**Brauzer import map'ni qo'llab-quvvatlaydimi tekshirish.**
+
+```js
 javascript// Import map qo'llab-quvvatlanishini tekshirish
 if (HTMLScriptElement.supports && HTMLScriptElement.supports('importmap')) {
   console.log('Import map qo\'llab-quvvatlanadi');
@@ -374,6 +441,7 @@ if (HTMLScriptElement.supports && HTMLScriptElement.supports('importmap')) {
   script.src = './full-path-fallback.js';
   document.head.appendChild(script);
 }
+```
 
 20. JSON Import
 JSON fayllarni modul sifatida import qilish. Import attributes bilan resurs turini ko'rsatish majburiy.
