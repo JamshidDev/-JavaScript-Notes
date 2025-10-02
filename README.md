@@ -260,7 +260,7 @@ export { fetchPosts as getPosts } from './posts.js';
 import { getUsers, getPosts } from './api/index.js';
 ```
 
-## 3. Side Effect Import
+## 13. Side Effect Import
 
 **Modul kodini bajarish uchun import qilish, lekin hech narsa olmaslik. Bu global sozlamalar, polyfilllar yoki CSS yuklash uchun ishlatiladi.**
 
