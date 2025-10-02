@@ -367,7 +367,7 @@ loadFeature('premium'); // Agar yo'q bo'lsa, default yuklanadi
 
 **HTML'da modul yo'llarini qisqartirish va boshqarish uchun import xarita ishlatish.**
 
-```js
+```html
 html<!DOCTYPE html>
 <html>
 <head>
@@ -475,7 +475,7 @@ if (config.features.darkMode) {
 
 **CSS fayllarni JavaScript modulida import qilish va Constructable Stylesheets sifatida ishlatish.**
 
-```html
+```js
 css/* styles.css */
 .button {
   background: blue;
@@ -509,7 +509,7 @@ class MyButton extends HTMLElement {
 
 **Modul darajasida to'g'ridan-to'g'ri await ishlatish. Bu asinxron ma'lumotlarni yuklash va initsializatsiya qilish uchun juda qulay.**
 
-```html
+```js
 javascript// database.js
 // Top level await - async function kerak emas
 const response = await fetch('https://api.example.com/config');
@@ -590,8 +590,11 @@ html<!DOCTYPE html>
 </html>
 ```
 
-25. Module Preload
-Kritik modullarni oldindan yuklash orqali performance'ni yaxshilash.
+## 25. Module Preload
+
+**Kritik modullarni oldindan yuklash orqali performance'ni yaxshilash.**
+
+```html
 html<!DOCTYPE html>
 <html>
 <head>
@@ -611,9 +614,13 @@ html<!DOCTYPE html>
   <!-- Bu sahifa yuklash vaqtini sezilarli kamaytiradi -->
 </body>
 </html>
+```
 
-26. Nomodule Fallback
-Eski brauzerlar uchun fallback kod. Module'ni qo'llab-quvvatlamaydigan brauzerlar uchun alternativ skript.
+## 26. Nomodule Fallback
+
+**Eski brauzerlar uchun fallback kod. Module'ni qo'llab-quvvatlamaydigan brauzerlar uchun alternativ skript.**
+
+```html
 html<!DOCTYPE html>
 <html>
 <head>
@@ -632,9 +639,13 @@ html<!DOCTYPE html>
   <!-- Eski brauzerlar - transpiled va bundled kod -->
 </body>
 </html>
+```
 
-27. Live Bindings
-Import qilingan qiymatlar "jonli" - eksport qilingan modul qiymatni o'zgartirsa, import qilingan joy ham o'zgaradi.
+## 27. Live Bindings
+
+**Import qilingan qiymatlar "jonli" - eksport qilingan modul qiymatni o'zgartirsa, import qilingan joy ham o'zgaradi.**
+
+```js
 javascript// counter.js
 export let count = 0;
 
@@ -660,9 +671,13 @@ console.log(getCount()); // 3
 
 // Lekin import qilingan o'zgaruvchini o'zgartirib bo'lmaydi
 // count = 10; // Error! Import qilingan qiymat read-only
+```
 
-28. Cyclic Dependencies (Working)
-Siklik bog'liqliklar asinxron ishlatilganda to'g'ri ishlaydi.
+## 28. Cyclic Dependencies (Working)
+
+**Siklik bog'liqliklar asinxron ishlatilganda to'g'ri ishlaydi.**
+
+```js
 javascript// a.js
 import { b } from './b.js';
 
@@ -689,9 +704,13 @@ import './b.js';
 
 // Har ikki modul ham to'g'ri ishlaydi
 // Chunki qiymatlar sinxron ishlatilmaydi
+```
 
-29. Cyclic Dependencies (Broken)
-Siklik bog'liqliklar sinxron ishlatilganda xatoga olib keladi.
+## 29. Cyclic Dependencies (Broken)
+
+**Siklik bog'liqliklar sinxron ishlatilganda xatoga olib keladi.**
+
+```js
 javascript// moduleA.js
 import { valueB } from './moduleB.js';
 
@@ -713,9 +732,13 @@ export const valueB = 'B dan';
 // 2. moduleB moduleA'ni import qilmoqchi
 // 3. Hech biri to'liq yuklanmagan
 // 4. Sinxron ishlatish - initialized bo'lmagan qiymat
+```
 
-30. Avoiding Cyclic Dependencies
-Siklik bog'liqliklardan qochish usullari va yaxshi arxitektura.
+## 30. Avoiding Cyclic Dependencies
+
+**Siklik bog'liqliklardan qochish usullari va yaxshi arxitektura.**
+
+```js
 javascript// YOMON: Siklik bog'liqlik
 // userService.js
 import { log } from './logger.js';
@@ -747,9 +770,13 @@ const user = createUser('Ali');
 log('Application started');
 
 // Sikl yo'q, hamma narsa toza ishlaydi
+```
 
-31. Import Hoisting
-Import deklaratsiyalari avtomatik ravishda kodning boshiga "ko'tariladi", lekin yaxshi amaliyot - ularni boshida yozish.
+## 31. Import Hoisting
+
+**Import deklaratsiyalari avtomatik ravishda kodning boshiga "ko'tariladi", lekin yaxshi amaliyot - ularni boshida yozish.**
+
+```js
 javascript// app.js
 
 // Bu ishlaydi, chunki import hoisted
@@ -770,9 +797,13 @@ import { multiply } from './math.js';
 
 // LEKIN yaxshi amaliyot: barcha importlarni boshida yozish
 // Bu kodni o'qish va maintain qilish osonlashtiradi
+```
 
-32. Module Scope
-Modul o'zgaruvchilari global scope'da emas, faqat modul ichida mavjud. Lekin global o'zgaruvchilarga kirish mumkin.
+## 32. Module Scope
+
+**Modul o'zgaruvchilari global scope'da emas, faqat modul ichida mavjud. Lekin global o'zgaruvchilarga kirish mumkin.**
+
+```js
 javascript// module.js
 // Bu o'zgaruvchilar faqat modul ichida
 const privateVar = 'Bu private';
@@ -812,9 +843,14 @@ html<!-- HTML'da -->
 <script>
   // console.log(moduleVar); // Error! Ko'rinmaydi
 </script>
+```
 
-33. Strict Mode Auto-enabled
-Modullar avtomatik ravishda strict mode'da ishlaydi. Alohida 'use strict' yozish kerak emas.
+
+## 33. Strict Mode Auto-enabled
+
+**Modullar avtomatik ravishda strict mode'da ishlaydi. Alohida 'use strict' yozish kerak emas.**
+
+```js
 javascript// module.js
 // 'use strict' yozish shart emas - avtomatik
 
@@ -843,9 +879,13 @@ export function strictFunction() {
   // Bu ham strict mode'da
   arguments.callee; // Error!
 }
+```
 
-34. Multiple Exports from Different Modules
-Bir faylda bir nechta modullardan elementlarni import qilish va ularni boshqarish.
+## 34. Multiple Exports from Different Modules
+
+**Bir faylda bir nechta modullardan elementlarni import qilish va ularni boshqarish.**
+
+```js
 javascript// services/users.js
 export function getUser(id) { return { id, name: 'User' }; }
 export function deleteUser(id) { console.log('Deleted', id); }
@@ -870,9 +910,13 @@ const comment = getComment(1);
 
 deleteUser(1);
 deletePost(1);
+```
 
-35. Barrel Exports Pattern
-Bir papkadagi barcha modullarni bitta index.js fayli orqali eksport qilish pattern'i.
+## 35. Barrel Exports Pattern
+
+**Bir papkadagi barcha modullarni bitta index.js fayli orqali eksport qilish pattern'i.**
+
+```js
 javascript// components/Button.js
 export function Button(props) { return '<button>...</button>'; }
 
@@ -906,3 +950,6 @@ import { Button, Input, Select, Form } from './components/index.js';
 const loginForm = Form({
   children: [
     Input({ type: 'text' }),
+
+
+```
