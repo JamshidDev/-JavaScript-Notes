@@ -393,9 +393,13 @@ html<!DOCTYPE html>
   </script>
 </body>
 </html>
+```
 
-18. Import Map (Scopes)
-Turli yo'llar uchun turli modul versiyalarini boshqarish.
+## 18. Import Map (Scopes)
+
+**Turli yo'llar uchun turli modul versiyalarini boshqarish.**
+
+```html
 html<script type="importmap">
 {
   "imports": {
