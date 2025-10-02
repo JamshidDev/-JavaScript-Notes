@@ -127,7 +127,7 @@ console.log(getCirclePerimeter(5)); // 31.4159
 ```
 
 ## 7. Default Import
-** Default eksportni import qilish. Jingalak qavslar ishlatilmaydi va istalgan nom berilishi mumkin.**
+**Default eksportni import qilish. Jingalak qavslar ishlatilmaydi va istalgan nom berilishi mumkin.**
 
 ```js
 javascript// app.js
@@ -443,8 +443,11 @@ if (HTMLScriptElement.supports && HTMLScriptElement.supports('importmap')) {
 }
 ```
 
-20. JSON Import
-JSON fayllarni modul sifatida import qilish. Import attributes bilan resurs turini ko'rsatish majburiy.
+## 20. JSON Import
+
+**JSON fayllarni modul sifatida import qilish. Import attributes bilan resurs turini ko'rsatish majburiy.**
+
+```js
 javascript// config.json
 {
   "apiUrl": "https://api.example.com",
@@ -466,9 +469,13 @@ console.log(config.timeout); // 5000
 if (config.features.darkMode) {
   enableDarkMode();
 }
+```
 
-21. CSS Import
-CSS fayllarni JavaScript modulida import qilish va Constructable Stylesheets sifatida ishlatish.
+## 21. CSS Import
+
+**CSS fayllarni JavaScript modulida import qilish va Constructable Stylesheets sifatida ishlatish.**
+
+```js
 css/* styles.css */
 .button {
   background: blue;
@@ -496,9 +503,13 @@ class MyButton extends HTMLElement {
     shadow.innerHTML = '<button class="button">Click me</button>';
   }
 }
+```
 
-22. Top Level Await
-Modul darajasida to'g'ridan-to'g'ri await ishlatish. Bu asinxron ma'lumotlarni yuklash va initsializatsiya qilish uchun juda qulay.
+## 22. Top Level Await
+
+**Modul darajasida to'g'ridan-to'g'ri await ishlatish. Bu asinxron ma'lumotlarni yuklash va initsializatsiya qilish uchun juda qulay.**
+
+```js
 javascript// database.js
 // Top level await - async function kerak emas
 const response = await fetch('https://api.example.com/config');
@@ -518,9 +529,13 @@ import { db } from './database.js';
 export async function getUsers() {
   return await db.query('SELECT * FROM users');
 }
+```
 
-23. Module in HTML (External)
-Tashqi JavaScript modul faylini HTML'ga ulash.
+## 23. Module in HTML (External)
+
+**Tashqi JavaScript modul faylini HTML'ga ulash.**
+
+```js
 html<!DOCTYPE html>
 <html lang="uz">
 <head>
@@ -538,9 +553,13 @@ html<!DOCTYPE html>
   <!-- Modul strict mode'da avtomatik ishlaydi -->
 </body>
 </html>
+```
 
-24. Module in HTML (Inline)
-HTML ichida to'g'ridan-to'g'ri modul kodi yozish.
+## 24. Module in HTML (Inline)
+
+**HTML ichida to'g'ridan-to'g'ri modul kodi yozish.**
+
+```html
 html<!DOCTYPE html>
 <html>
 <head>
@@ -569,6 +588,7 @@ html<!DOCTYPE html>
   </script>
 </body>
 </html>
+```
 
 25. Module Preload
 Kritik modullarni oldindan yuklash orqali performance'ni yaxshilash.
