@@ -831,6 +831,8 @@ import { publicFunction } from './module.js';
 publicFunction(); // Ishlaydi
 // privateVar // Error! Ko'rinmaydi
 // privateFunction() // Error! Ko'rinmaydi
+```
+```html
 html<!-- HTML'da -->
 <script>
   // Global o'zgaruvchi
