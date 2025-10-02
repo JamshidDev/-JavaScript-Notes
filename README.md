@@ -475,7 +475,7 @@ if (config.features.darkMode) {
 
 **CSS fayllarni JavaScript modulida import qilish va Constructable Stylesheets sifatida ishlatish.**
 
-```js
+```html
 css/* styles.css */
 .button {
   background: blue;
@@ -509,7 +509,7 @@ class MyButton extends HTMLElement {
 
 **Modul darajasida to'g'ridan-to'g'ri await ishlatish. Bu asinxron ma'lumotlarni yuklash va initsializatsiya qilish uchun juda qulay.**
 
-```js
+```html
 javascript// database.js
 // Top level await - async function kerak emas
 const response = await fetch('https://api.example.com/config');
@@ -535,7 +535,7 @@ export async function getUsers() {
 
 **Tashqi JavaScript modul faylini HTML'ga ulash.**
 
-```js
+```html
 html<!DOCTYPE html>
 <html lang="uz">
 <head>
