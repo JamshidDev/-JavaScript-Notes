@@ -1,4 +1,42 @@
-# JavaScript Modules - Complete Guide
+# JavaScript Modules - Mundarija
+
+1. [Named Export](#1-named-export)  
+2. [Named Export with Rename](#2-named-export-with-rename)  
+3. [Default Export](#3-default-export)  
+4. [Default Export (Class)](#4-default-export-class)  
+5. [Named Import](#5-named-import)  
+6. [Named Import with Rename](#6-named-import-with-rename)  
+7. [Default Import](#7-default-import)  
+8. [Mixed Import (Default + Named)](#8-mixed-import-default--named)  
+9. [Namespace Import](#9-namespace-import)  
+10. [Re-export](#10-re-export)  
+11. [Re-export All](#11-re-export-all)  
+12. [Re-export with Rename](#12-re-export-with-rename)  
+13. [Side Effect Import](#13-side-effect-import)  
+14. [Dynamic Import (Basic)](#14-dynamic-import-basic)  
+15. [Dynamic Import with Condition](#15-dynamic-import-with-condition)  
+16. [Dynamic Import with Error Handling](#16-dynamic-import-with-error-handling)  
+17. [Import Map (Basic)](#17-import-map-basic)  
+18. [Import Map (Scopes)](#18-import-map-scopes)  
+19. [Import Map Feature Detection](#19-import-map-feature-detection)  
+20. [JSON Import](#20-json-import)  
+21. [CSS Import](#21-css-import)  
+22. [Top Level Await](#22-top-level-await)  
+23. [Module in HTML (External)](#23-module-in-html-external)  
+24. [Module in HTML (Inline)](#24-module-in-html-inline)  
+25. [Module Preload](#25-module-preload)  
+26. [Nomodule Fallback](#26-nomodule-fallback)  
+27. [Live Bindings](#27-live-bindings)  
+28. [Cyclic Dependencies (Working)](#28-cyclic-dependencies-working)  
+29. [Cyclic Dependencies (Broken)](#29-cyclic-dependencies-broken)  
+30. [Avoiding Cyclic Dependencies](#30-avoiding-cyclic-dependencies)  
+31. [Import Hoisting](#31-import-hoisting)  
+32. [Module Scope](#32-module-scope)  
+33. [Strict Mode Auto-enabled](#33-strict-mode-auto-enabled)  
+34. [Multiple Exports from Different Modules](#34-multiple-exports-from-different-modules)  
+35. [Barrel Exports Pattern](#35-barrel-exports-pattern)  
+
+
 ## 1. Named Export
 **Moduldan bir nechta qiymat, funksiya yoki klasslarni eksport qilish uchun ishlatiladi. Har bir eksport qilingan element o'z nomi bilan identifikatsiya qilinadi va import qilishda aynan shu nomdan foydalaniladi.**
 
