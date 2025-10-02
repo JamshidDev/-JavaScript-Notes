@@ -479,7 +479,7 @@ if (config.features.darkMode) {
 
 **CSS fayllarni JavaScript modulida import qilish va Constructable Stylesheets sifatida ishlatish.**
 
-```js
+```css
 css/* styles.css */
 .button {
   background: blue;
@@ -488,6 +488,8 @@ css/* styles.css */
   border: none;
   border-radius: 4px;
 }
+```
+```js
 javascript// app.js
 // CSS'ni import qilish
 import styles from './styles.css' with { type: 'css' };
